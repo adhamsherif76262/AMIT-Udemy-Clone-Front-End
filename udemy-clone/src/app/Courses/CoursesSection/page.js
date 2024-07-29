@@ -38,6 +38,8 @@ function CoursesSection({CourseIntro}) {
         //     </button>
         //   ))}
         // </div>
+          <div className="">asdadas</div>
+
       </article>
       // <div className={Styles.Courses_Mother_Div}>
       //   {CourseIntro.map((item, index) => (
