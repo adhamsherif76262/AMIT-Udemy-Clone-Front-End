@@ -52,7 +52,7 @@ function CoursesSection({CourseIntro}) {
               <Carousel breakPoints={breakPoints}>
                 {
                   item.courses.map((course, index) => (
-                    <a href={`../../Courses/${course.id}`} className={`${Styles.Slides} ${Styles.ExploreBtnAnchor}`}>
+                    <a key={index} href={`../../Courses/${course.id}`} className={`${Styles.Slides} ${Styles.ExploreBtnAnchor}`}>
                         <img src={course.image} className={`${Styles.carouselImg}`}></img>
                         <div className="">
                           <h5 >{course.title}</h5>
