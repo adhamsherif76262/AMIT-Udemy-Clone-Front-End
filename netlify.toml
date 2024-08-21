@@ -1,4 +1,4 @@
 [[redirects]]
 from = "/"
-to = "/src/app/page"
+to = "/src/app/"
 status = 200
