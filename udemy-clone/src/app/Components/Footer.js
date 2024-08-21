@@ -27,6 +27,8 @@ function Footer() {
             <li>
                 <a className={Styles.Footer_anchor} href="https://about.udemy.com/company?locale=en-us#offices">Contact us</a>
             </li>
+            <li>
+                <a id = "Contact_Email_En" href="mailto:aenri@aenri.org?&subject=Mail from xyz.com&body=Dear AENRI.org" target="_blank">aenri@aenri.org</a>            </li>
         </ul>
 
         <ul className={Styles.Footer_ul}>

@@ -15,13 +15,24 @@ import Styles from "./CourseDetails.module.css"
 import { Alert } from 'react-bootstrap';
 async function CourseDetailPage({params}) {
 
+    const Test_Response = await axios.get(`https://api.jsonsilo.com/public/42574ecd-1db4-4d34-a482-05b9ba9d7a11`)
+    const Test_Response_Data = Test_Response.data
+    // const CourseDetailsResponse = await axios.get(`https://jsonkeeper.com/b/PJBD`)
     const CourseDetailsResponse = await axios.get(`http://localhost:5000/course`)
     const CourseDetails = CourseDetailsResponse.data
+    // Alert(
+    //   <div className="">
+
+    //     JSON.parse(CourseDetails)
+    //   </div>
+      
+    // )
     let C,H;
     let innerContent;
     {params.CourseID % 2 == 0 ? C =1 : C =0;}
     {params.CourseID % 2 == 0 ? H = "100%" : H = "100%"}
     const CourseContentResponse = await axios.get(`http://localhost:5000/${C}`);
+    // const CourseContentResponse = await axios.get(`http://localhost:5000/${C}`);
     const CourseContent = CourseContentResponse.data;
 
     {CourseContent.map((content)=>{
@@ -33,11 +44,19 @@ async function CourseDetailPage({params}) {
     <>
       <HeaderNavBar></HeaderNavBar>
       <SideBarComponent CourseDetails={CourseDetails} C={C}></SideBarComponent>
+      {/* <div className="" style={{ marginBottom: "1000px" }}>
+        {JSON.stringify(CourseDetails["1"])}
+        {JSON.stringify(Test_Response_Data[0][0].sections[0].items[1].description)}
+      </div> */}
       <HeaderContentComponent
         CourseDetails={CourseDetails}
         C={C}
       ></HeaderContentComponent>
-      <div className={`${Styles.ContainerDiv}`} id='Container_Div' style={{height : "H"}}>
+      <div
+        className={`${Styles.ContainerDiv}`}
+        id="Container_Div"
+        style={{ height: "H" }}
+      >
         <LearningObjectivesComponent
           CourseDetails={CourseDetails}
           C={C}
@@ -64,7 +83,7 @@ async function CourseDetailPage({params}) {
           C={C}
         ></ReviewsComponent>
       </div>
-        <Footer></Footer>
+      <Footer></Footer>
     </>
   );
 }
