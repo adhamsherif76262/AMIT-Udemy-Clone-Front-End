@@ -1,4 +1,4 @@
 [[redirects]]
-from = "/"
-to = "/src/app/page.js"
+from = "/src/app/page"
+to = "https://www.youtube.com/"
 status = 200
