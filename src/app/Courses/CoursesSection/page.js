@@ -114,7 +114,7 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
-import Carousel from "react-elastic-carousel";
+// import Carousel from "react-elastic-carousel";
 import Rating from '../../Components/Rating';
 import Styles from "../Courses.module.css"
 import "../CarouselStyle.module.css";
@@ -153,7 +153,9 @@ function CoursesSection({ CourseIntro, TabNames }) {
                   ref={index === 0 ? firstBtnRef : null}
                   key={index}
                   onClick={() => setSelectedTab(index)}
-                  className={`${Styles['Home_Tab']} ${Styles['M_Bottom']} ${selectedTab === index ? Styles.Bold : ""}`}
+                  className={`${Styles["Home_Tab"]} ${Styles["M_Bottom"]} ${
+                    selectedTab === index ? Styles.Bold : ""
+                  }`}
                 >
                   {item.TabName}
                 </button>
@@ -190,7 +192,10 @@ function CoursesSection({ CourseIntro, TabNames }) {
                   {item.title}
                 </h4>
                 <div className="App">
-                  <Carousel breakPoints={breakPoints}>
+                  {/* Should be <Carousel breakPoints={breakPoints}></Carousel>
+                    But I had to change it because the hosting website Netlify.com Didn't
+                    find the elastic carousel module*/}
+                  <div breakPoints={breakPoints}>
                     {item.courses.map((course, index) => (
                       <a
                         key={index}
@@ -213,7 +218,7 @@ function CoursesSection({ CourseIntro, TabNames }) {
                         </div>
                       </a>
                     ))}
-                  </Carousel>
+                  </div>
                 </div>
               </div>
             ))}
