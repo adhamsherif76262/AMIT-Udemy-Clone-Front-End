@@ -222,11 +222,11 @@ function CoursesSection({ CourseIntro, TabNames }) {
       );
   }
 
-  if (!CourseIntro || !TabNames) {
-      const [courseIntro, setCourseIntro] = useState(null);
-      const [tabs, setTabs] = useState(null);
+  const [courseIntro, setCourseIntro] = useState(null);
+  const [tabs, setTabs] = useState(null);
 
-      useEffect(() => {
+  // if (!CourseIntro || !TabNames) {
+
         const fetchData = async () => {
           try {
             const CourseIntroResponse = await axios.get(
@@ -242,9 +242,8 @@ function CoursesSection({ CourseIntro, TabNames }) {
             console.error("Error fetching data:", error);
           }
         };
+          fetchData();
 
-        fetchData();
-      }, []);
 
       if (!courseIntro || !tabs) {
         return <div>Loading...</div>; // Ensure data is fetched before rendering child component
@@ -257,19 +256,19 @@ function CoursesSection({ CourseIntro, TabNames }) {
         </div>
       );
     // return <div>No data available</div>; // Handle the case where data is not yet passed down
-  }
+  
 
-  console.log(CourseIntro); // Check if CourseIntro is being passed correctly
-  // Or render it to the UI to verify
-  return (
-    <div>
-      {Fill_Data(CourseIntro)}
-      {/* <h1>Course Introduction</h1>
-      <p>{JSON.stringify(CourseIntro)}</p>
-      <p>{JSON.stringify(TabNames)}</p> */}
-      {/* Render the TabNames if needed */}
-    </div>
-  );
+  // console.log(CourseIntro); // Check if CourseIntro is being passed correctly
+  // // Or render it to the UI to verify
+  // return (
+  //   <div>
+  //     {Fill_Data(CourseIntro)}
+  //     {/* <h1>Course Introduction</h1>
+  //     <p>{JSON.stringify(CourseIntro)}</p>
+  //     <p>{JSON.stringify(TabNames)}</p> */}
+  //     {/* Render the TabNames if needed */}
+  //   </div>
+  // );
 }
 
 export default CoursesSection;
