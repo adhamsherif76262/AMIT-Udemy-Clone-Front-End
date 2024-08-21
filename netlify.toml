@@ -1,4 +1,0 @@
-[[redirects]]
-from = "/"
-to = "/src/app/page.js"
-status = 200
