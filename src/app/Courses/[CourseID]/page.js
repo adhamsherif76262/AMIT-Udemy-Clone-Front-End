@@ -18,8 +18,10 @@ async function CourseDetailPage({params}) {
     const Test_Response = await axios.get(`https://api.jsonsilo.com/public/42574ecd-1db4-4d34-a482-05b9ba9d7a11`)
     const Test_Response_Data = Test_Response.data
     // const CourseDetailsResponse = await axios.get(`https://jsonkeeper.com/b/PJBD`)
-    const CourseDetailsResponse = await axios.get(`http://localhost:5000/course`)
-    const CourseDetails = CourseDetailsResponse.data
+    const CourseDetailsResponse = await axios.get(`https://api.jsonsilo.com/public/42574ecd-1db4-4d34-a482-05b9ba9d7a11`)
+    const CourseDetails = CourseDetailsResponse.data["course"]
+    // const CourseDetailsResponse = await axios.get(`http://localhost:5000/course`)
+    // const CourseDetails = CourseDetailsResponse.data
     // Alert(
     //   <div className="">
 
@@ -31,9 +33,9 @@ async function CourseDetailPage({params}) {
     let innerContent;
     {params.CourseID % 2 == 0 ? C =1 : C =0;}
     {params.CourseID % 2 == 0 ? H = "100%" : H = "100%"}
-    const CourseContentResponse = await axios.get(`http://localhost:5000/${C}`);
+    const CourseContentResponse = await axios.get(`https://api.jsonsilo.com/public/42574ecd-1db4-4d34-a482-05b9ba9d7a11`);
     // const CourseContentResponse = await axios.get(`http://localhost:5000/${C}`);
-    const CourseContent = CourseContentResponse.data;
+    const CourseContent = CourseContentResponse.data[`${C}`];
 
     {CourseContent.map((content)=>{
         {innerContent = content.sections.length;}

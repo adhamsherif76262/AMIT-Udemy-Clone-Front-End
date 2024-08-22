@@ -235,14 +235,20 @@ function CoursesSection({ CourseIntro, TabNames }) {
         const fetchData = async () => {
           try {
             const CourseIntroResponse = await axios.get(
-              "http://localhost:5000/Array"
+              "https://api.jsonsilo.com/public/42574ecd-1db4-4d34-a482-05b9ba9d7a11"
             );
-            setCourseIntro(CourseIntroResponse.data);
+            setCourseIntro(CourseIntroResponse.data["Array"]);
+            setTabs(CourseIntroResponse.data["HomePageTaps"]);
+            
+            // const CourseIntroResponse = await axios.get(
+            //   "http://localhost:5000/Array"
+            // );
+            // setCourseIntro(CourseIntroResponse.data);
 
-            const TabsResponse = await axios.get(
-              "http://localhost:5000/HomePageTaps"
-            );
-            setTabs(TabsResponse.data);
+            // const TabsResponse = await axios.get(
+            //   "http://localhost:5000/HomePageTaps"
+            // );
+            // setTabs(TabsResponse.data);
           } catch (error) {
             console.error("Error fetching data:", error);
           }
