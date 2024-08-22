@@ -1,5 +1,5 @@
 [[redirects]]
 from = "/"
-to = ".next/prerender-manifest.js"
+to = ".next/server/pages/_app.js"
 status = 200
 force = false
