@@ -1,5 +1,5 @@
 [[redirects]]
 from = "/"
-to = "/src/app/page.js"
+to = "/src/app/Home"
 status = 200
 force = false
