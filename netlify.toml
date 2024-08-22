@@ -1,5 +1,0 @@
-[[redirects]]
-from = "/"
-to = ".next/server/pages/_app.js"
-status = 200
-force = false
