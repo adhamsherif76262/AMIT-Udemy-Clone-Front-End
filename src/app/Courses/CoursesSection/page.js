@@ -115,6 +115,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import Carousel from "react-elastic-carousel";
+import Carousel from "../../../../node_modules/react-elastic-carousel/dist/index.d.ts";
 import Rating from '../../Components/Rating';
 import Styles from "../Courses.module.css"
 import "../CarouselStyle.module.css";
