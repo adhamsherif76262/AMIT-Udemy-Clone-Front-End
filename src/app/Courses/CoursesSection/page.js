@@ -115,7 +115,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 // import Carousel from "react-elastic-carousel";
-import Carousel from "../../../../node_modules/react-elastic-carousel/dist";
+// import Carousel from "../../../../node_modules/react-elastic-carousel/dist";
 import Rating from '../../Components/Rating';
 import Styles from "../Courses.module.css"
 import "../CarouselStyle.module.css";
@@ -196,7 +196,7 @@ function CoursesSection({ CourseIntro, TabNames }) {
                   {/* Should be <Carousel breakPoints={breakPoints}></Carousel>
                     But I had to change it because the hosting website Netlify.com Didn't
                     find the elastic carousel module*/}
-                  <Carousel breakPoints={breakPoints}>
+                  <div breakPoints={breakPoints}>
                     {item.courses.map((course, index) => (
                       <a
                         key={index}
@@ -219,7 +219,7 @@ function CoursesSection({ CourseIntro, TabNames }) {
                         </div>
                       </a>
                     ))}
-                  </Carousel>
+                  </div>
                 </div>
               </div>
             ))}
