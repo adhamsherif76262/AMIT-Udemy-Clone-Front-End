@@ -29,15 +29,20 @@ function Courses() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const CourseIntroResponse = await axios.get(
-          "http://localhost:5000/Array"
-        );
-        setCourseIntro(CourseIntroResponse.data);
+          const CourseIntroResponse = await axios.get(
+            "https://api.jsonsilo.com/public/f954295a-cbc2-48a4-9c9d-b781132738fe"
+          );
+          setCourseIntro(CourseIntroResponse.data["Array"]);
+          setTabs(CourseIntroResponse.data["HomePageTaps"]);
+        // const CourseIntroResponse = await axios.get(
+        //   "http://localhost:5000/Array"
+        // );
+        // setCourseIntro(CourseIntroResponse.data);
 
-        const TabsResponse = await axios.get(
-          "http://localhost:5000/HomePageTaps"
-        );
-        setTabs(TabsResponse.data);
+        // const TabsResponse = await axios.get(
+        //   "http://localhost:5000/HomePageTaps"
+        // );
+        // setTabs(TabsResponse.data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }

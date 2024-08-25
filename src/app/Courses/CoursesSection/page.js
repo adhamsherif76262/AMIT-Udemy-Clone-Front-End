@@ -115,7 +115,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 // import Carousel from "react-elastic-carousel";
-import Carousel from "../../../../node_modules/react-elastic-carousel/dist/index";
+import Carousel from "../../../../node_modules/react-elastic-carousel/dist";
 import Rating from '../../Components/Rating';
 import Styles from "../Courses.module.css"
 import "../CarouselStyle.module.css";
@@ -236,7 +236,7 @@ function CoursesSection({ CourseIntro, TabNames }) {
         const fetchData = async () => {
           try {
             const CourseIntroResponse = await axios.get(
-              "https://api.jsonsilo.com/public/42574ecd-1db4-4d34-a482-05b9ba9d7a11"
+              "https://api.jsonsilo.com/public/f954295a-cbc2-48a4-9c9d-b781132738fe"
             );
             setCourseIntro(CourseIntroResponse.data["Array"]);
             setTabs(CourseIntroResponse.data["HomePageTaps"]);
